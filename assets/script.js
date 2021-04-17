@@ -1,17 +1,41 @@
+// Assign Time Information to the Current Time to variables, the second variable is for the Current Hour
 
 var now = dayjs();
-console.log(now);
 var time = now.$H
-console.log(time);
-// Create a variable for the element with the id = currentDay, and target the date within the now object
+
+// Create a variable for the element with the id = currentDay, and variables assigned to Work Hours as string and then integer data
 
 var currentDayEl = $("#currentDay").text(now.format('dddd, MMMM Do, YYYY h:mm a')); 
 var workHours = ["9 a.m.", "10 a.m.", "11 a.m.", "12 p.m.", "1 p.m.", "2 p.m.", "3 p.m.", "4 p.m.", "5 p.m."]
 var workHoursInt = [7,8,9,10,11,12,13,14,15]
 
+// Load data from Local Storage to savedInput Variables
 
+var savedInput0 = (localStorage.getItem("input0"));
+var savedInput1 = (localStorage.getItem("input1"));
+var savedInput2 = (localStorage.getItem("input2"));
+var savedInput3 = (localStorage.getItem("input3"));
+var savedInput4 = (localStorage.getItem("input4"));
+var savedInput5 = (localStorage.getItem("input5"));
+var savedInput6 = (localStorage.getItem("input6"));
+var savedInput7 = (localStorage.getItem("input7"));
+var savedInput8 = (localStorage.getItem("input8"));
 
-// Create a variable for the element with the class = container, 
+// Assign that input to variables for each textarea Value
+
+var textarea0_Val = savedInput0;
+var textarea1_Val = savedInput1;
+var textarea2_Val = savedInput2;
+var textarea3_Val = savedInput3;
+var textarea4_Val = savedInput4;
+var textarea5_Val = savedInput5;
+var textarea6_Val = savedInput6;
+var textarea7_Val = savedInput7;
+var textarea8_Val = savedInput8;
+
+  console.log(textarea0_Val)
+
+// Create a variable for the element with the class = container
 var row_0 = $("<div>").addClass("row");
 var row_1 = $("<div>").addClass("row");
 var row_2 = $("<div>").addClass("row");
@@ -158,6 +182,8 @@ var timeBlock8 = $("<div>").addClass("time-block");
         timeBlock8 = $("<div>").addClass("present"); 
         }
 
+//Creating the save buttons in HTML and adding a class defined in CSS
+        
 var saveBtn0 = $("<div>").addClass("saveBtn");
 var saveBtn1 = $("<div>").addClass("saveBtn");
 var saveBtn2 = $("<div>").addClass("saveBtn");
@@ -168,17 +194,17 @@ var saveBtn6 = $("<div>").addClass("saveBtn");
 var saveBtn7 = $("<div>").addClass("saveBtn");
 var saveBtn8 = $("<div>").addClass("saveBtn");
 
-var saveBtnText = "Save";
+var saveBtnText = "📌";  // I saw the link in the HTML to get the other iamge from the mock-up, I used this instead (looked better than the floppy disk character)
 
-var textarea0 = $("<textarea>");
-var textarea1 = $("<textarea>");
-var textarea2 = $("<textarea>");
-var textarea3 = $("<textarea>");
-var textarea4 = $("<textarea>");
-var textarea5 = $("<textarea>");
-var textarea6 = $("<textarea>");
-var textarea7 = $("<textarea>");
-var textarea8 = $("<textarea>");
+var textarea0 = $("<textarea>").val(textarea0_Val);
+var textarea1 = $("<textarea>").val(textarea1_Val);
+var textarea2 = $("<textarea>").val(textarea2_Val);
+var textarea3 = $("<textarea>").val(textarea3_Val);
+var textarea4 = $("<textarea>").val(textarea4_Val);
+var textarea5 = $("<textarea>").val(textarea5_Val);
+var textarea6 = $("<textarea>").val(textarea6_Val);
+var textarea7 = $("<textarea>").val(textarea7_Val);
+var textarea8 = $("<textarea>").val(textarea8_Val);
 
 var containerEl = $(".container")
 
@@ -255,24 +281,55 @@ timeBlock8.append(textarea8);
 row_8.append(saveBtn8);
 saveBtn8.text(saveBtnText)
 
-var textarea0_Val = $("<textarea>");
-var textarea1_Val = $("<textarea>");
-var textarea2_Val = $("<textarea>");
-var textarea3_Val = $("<textarea>");
-var textarea4_Val = $("<textarea>");
-var textarea5_Val = $("<textarea>");
-var textarea6_Val = $("<textarea>");
-var textarea7_Val = $("<textarea>");
-var textarea8_Val = $("<textarea>");
+
 
 
 
 $(saveBtn0).on("click", function (event) {
-    event.preventDefault();
-    console.log("Button 0")
     var textarea0_Val = textarea0.val().trim();
     localStorage.setItem("input0", (textarea0_Val));
-  });
+});
+
+$(saveBtn2).on("click", function (event) {
+    var textarea2_Val = textarea2.val().trim();
+    localStorage.setItem("input2", (textarea2_Val));
+});
+
+$(saveBtn1).on("click", function (event) {
+    var textarea1_Val = textarea1.val().trim();
+    localStorage.setItem("input1", (textarea1_Val));
+});
+
+$(saveBtn3).on("click", function (event) {
+    var textarea3_Val = textarea3.val().trim();
+    localStorage.setItem("input3", (textarea3_Val));
+});
+
+$(saveBtn4).on("click", function (event) {
+    var textarea4_Val = textarea4.val().trim();
+    localStorage.setItem("input4", (textarea4_Val));
+});
+
+$(saveBtn5).on("click", function (event) {
+    var textarea5_Val = textarea5.val().trim();
+    localStorage.setItem("input5", (textarea5_Val));
+});
+
+$(saveBtn6).on("click", function (event) {
+    var textarea6_Val = textarea6.val().trim();
+    localStorage.setItem("input6", (textarea6_Val));
+});
+
+$(saveBtn7).on("click", function (event) {
+    var textarea7_Val = textarea7.val().trim();
+    localStorage.setItem("input7", (textarea7_Val));
+});
+
+$(saveBtn8).on("click", function (event) {
+    var textarea8_Val = textarea8.val().trim();
+    localStorage.setItem("input8", (textarea8_Val));
+});
+
 
 
 
