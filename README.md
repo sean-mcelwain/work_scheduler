@@ -8,6 +8,6 @@ This is WebPage containing a Work Scheduler that allows a user to make a to-do l
 
 # Screenshot:
 
-![Screenshot](https://sean-mcelwain.github.io/work_scheduler/assets/images/screenshot.jpg)
+![Screenshot](https://github.com/sean-mcelwain/work_scheduler/blob/main/assets/screenshot.jpg)
 
 
